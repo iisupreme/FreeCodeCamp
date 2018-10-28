@@ -1,147 +1,142 @@
-![](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
-
-[![Throughput Graph](https://graphs.waffle.io/freecodecamp/freecodecamp/throughput.svg)](https://waffle.io/freecodecamp/freecodecamp/metrics)
-
-[![Join the chat at https://gitter.im/freecodecamp/freecodecamp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/freecodecamp/freecodecamp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-Welcome to Free Code Camp's open source codebase and curriculum!
-=======================
-
-Free Code Camp is an open-source community where you learn to code and help nonprofits.
-
-You start by working through our self-paced, browser-based full stack JavaScript curriculum. 
-
-After you complete the first 400 hours worth of challenges (which involves building 10 single-page apps), you'll earn your Front End Development Certification.
-
-After you complete the second 400 hours worth of challenges (which involves building and deploying 5 full stack apps), you'll earn your Full Stack Development Certification.
-
-Then we'll pair you with another camper, an agile project manager, and a stakeholder from a nonprofit organization. Together, you'll plan and build an app that helps that nonprofit carry out its mission more effectively.
-
-**We help our campers build job-worthy portfolios of real apps used by real people, while helping nonprofits.**
-
-This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Gitter](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [Medium publication](http://medium.freecodecamp.com), and even a [Twitch.tv channel](http://twitch.tv/freecodecamp).
-
-[Join our community here](http://www.freecodecamp.com/signin).
-
-Wiki
-------------
-
-We would love your help expanding our [wiki](https://github.com/freecodecamp/freecodecamp/wiki). Our goal is to become a great resource for people learning to code, building local coding communities, and applying for coding jobs.
-
-Contributing
-------------
-
-We welcome pull requests from Free Code Camp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
-
-1.  Check our [public Waffle Board](https://waffle.io/freecodecamp/freecodecamp).
-2.  Pick an issue that nobody has claimed and start working on it. If your issue isn't on the board, open an issue. If you think you can fix it yourself, start working on it. Feel free to ask for help in our [Gitter](https://gitter.im/FreeCodeCamp/FreeCodeCamp).
-3.  Fork the project ([Need help with forking a project?](https://help.github.com/articles/fork-a-repo/)). You'll do all of your work on your forked copy.
-4.  Create a branch specific to the issue or feature you are working on. Push your work to that branch. ([Need help with branching?](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches))
-5.  Name the branch something like `fix/xxx` or `feature/xxx` where `xxx` is a short description of the changes or feature you are attempting to add. For example `fix/email-login` would be a branch where I fix something specific to email login.
-6.  You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [Free Code Camp's JavaScript Style Guide](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Free-Code-Camp-JavaScript-Style-Guide) (you can find a summary of those rules [here](https://github.com/FreeCodeCamp/FreeCodeCamp/blob/staging/.eslintrc). Please do not ignore any linting errors, as they are meant to **help** you and to ensure a clean and simple code base. Make sure none of your JavaScript is longer than 80 characters per line.
-7.  Once your code is ready, submit a [pull request](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Pull-Request-Contribute) from your branch to Free Code Camp's `staging` branch. We'll do a quick code review and give you feedback, then iterate from there. It may also be helpful to read about git [rebasing](https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/git-rebase).
-
-Prerequisites
--------------
-
-- [MongoDB](http://www.mongodb.org/downloads)
-- [Node.js](http://nodejs.org)
-
-Getting Started
----------------
-
-The easiest way to get started is to clone the repository:
-
-```bash
-# Get the latest snapshot
-git clone --depth=1 https://github.com/freecodecamp/freecodecamp.git freecodecamp
-
-# Change directory
-cd freecodecamp
-
-# Install NPM dependencies
-npm install
-
-# Install Gulp globally
-npm install -g gulp
-
-# Install Bower globally
-npm install -g bower
-
-# Install Bower dependencies
-bower install
-
-# Create a .env file and populate it with the necessary API keys and secrets:
-touch .env
-```
-
-Edit your `.env` file with the following API keys accordingly. If you only use email login, only the `MONGOHQ_URL`, `SESSION_SECRET`, `MANDRILL_USER` and `MANDRILL_PASSWORD` fields are necessary. Keep in mind if you want to use more services you'll have to get your own API keys for those services. If you only use a subset or no OAuth2 authentication methods, you may want to remove them from ```server/passport-providers.js``` - otherwise the server will complain about missing clientIDs at launch.
-
-```
-MONGOHQ_URL='mongodb://localhost:27017/freecodecamp'
-
-FACEBOOK_ID=stuff
-FACEBOOK_SECRET=stuff
-
-GITHUB_ID=stuff
-GITHUB_SECRET=stuff
-
-GOOGLE_ID=stuff
-GOOGLE_SECRET=stuff
-
-LINKEDIN_ID=stuff
-LINKEDIN_SECRET=stuff
-
-MANDRILL_PASSWORD=stuff
-MANDRILL_USER=stuff
-
-TRELLO_KEY=stuff
-TRELLO_SECRET=stuff
-
-TWITTER_KEY=stuff
-TWITTER_SECRET=stuff
-TWITTER_TOKEN=stuff
-TWITTER_TOKEN_SECRET=stuff
-
-BLOGGER_KEY=stuff
-
-SESSION_SECRET=secretstuff
-COOKIE_SECRET='this is a secret'
-
-PEER=stuff
-DEBUG=true
-```
-
-```bash
-# Start the mongo server in a seperate terminal
-mongod
-
-# Initialize Free Code Camp
-# This will seed the database for the first time.
-# This command should only be run once.
-npm run first-time
-
-# start the application
-gulp
-```
-Now navigate to your browser and open http://localhost:3001
-If the app loads, congratulations - you're all set. Otherwise, let us know by opening a GitHub issue and with your error.
+![freeCodeCamp.org Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
+[![Build Status](https://travis-ci.org/freeCodeCamp/freeCodeCamp.svg?branch=staging)](https://travis-ci.org/freeCodeCamp/freeCodeCamp)
+[![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+[![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
+[![Known Vulnerabilities](https://snyk.io/test/github/freecodecamp/freecodecamp/badge.svg)](https://snyk.io/test/github/freecodecamp/freecodecamp)
 
 
-License
--------
+## Welcome to freeCodeCamp.org's open source codebase and curriculum!
 
-The BSD-3-Clause
+freeCodeCamp.org is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
-Copyright (c) 2015, Free Code Camp
-All rights reserved.
+Our full-stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+## Table of Contents
 
-1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+* [Certifications](#certifications)
+* [The Learning Platform](#the-learning-platform)
+* [Found a Bug](#found-a-bug)
+* [Found a security issue](#found-a-security-issue)
+* [Contributing](#contributing)
+* [License](#license)
 
-2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
-3. Neither the name of Free Code Camp nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+### Certifications
 
-THIS SOFTWARE IS PROVIDED BY FREE CODE CAMP AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
+
+Each of these 30 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally and ensure you've fulfilled all the user stories before you submit it.
+
+You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Glitch - or even on your local computer's development environment.
+
+Once you’ve earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or résumé. And when your prospective employers or freelance clients click that link, they’ll see a verified certification specific to you.
+
+The one exception to this is in the event that we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/academic-honesty). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
+
+Here are our six core certifications:
+
+#### 1. Responsive Web Design Certification
+
+- Basic HTML and HTML5
+- Basic CSS
+- Applied Visual Design
+- Applied Accessibility
+- Responsive Web Design Principles
+- CSS Flexbox
+- CSS Grid <br />
+  <br />
+  **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
+
+#### 2. JavaScript Algorithms and Data Structures Certification
+
+- Basic JavaScript
+- ES6
+- Regular Expressions
+- Debugging
+- Basic Data Structures
+- Algorithm Scripting
+- Object Oriented Programming
+- Functional Programming <br />
+  <br />
+  **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
+
+#### 3. Front End Libraries Certification
+
+- Bootstrap
+- jQuery
+- Sass
+- React
+- Redux
+- React and Redux <br />
+  <br />
+  **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
+
+#### 4. Data Visualization Certification
+
+- Data Visualization with D3
+- JSON APIs and Ajax <br />
+  <br />
+  **Projects**: Bar Chart, Scatterplot Graph, Heat Map, Choropleth Map, Treemap Diagram
+
+#### 5. APIs and Microservices Certification
+
+- Managing Packages with Npm
+- Basic Node and Express
+- MongoDB and Mongoose <br />
+  <br />
+  **Projects**: Timestamp Microservice, Request Header Parser, URL Shortener, Exercise Tracker, File Metadata Microservice
+
+#### 6. Information Security and Quality Assurance Certification
+
+- Information Security with HelmetJS
+- Quality Assurance and Testing with Chai
+- Advanced Node and Express <br />
+  <br />
+  **Projects**: Metric-Imperial Converter, Issue Tracker, Personal Library, Stock Price Checker, Anonymous Message Board
+
+#### Full Stack Development Certification
+
+Once you earn all 6 of these certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This final distinction signifies that you’ve completed around 1,800 hours of coding with a wide range of web development tools.
+
+#### Legacy Certifications
+
+We also have 3 legacy certifications from our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.org.
+
+- Legacy Front End Development Certification
+- Legacy Data Visualization Certification
+- Legacy Back End Development Certification
+
+### The Learning Platform
+
+This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
+
+Our community also has:
+
+- A super active [forum](https://www.freecodecamp.org/forum)
+- Thousands of [local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
+- Medium's [largest technical publication](https://medium.freecodecamp.org)
+- A popular [YouTube channel](https://youtube.com/freecodecamp)
+- A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
+
+### [Join our community here](https://www.freecodecamp.org/signin).
+
+### Found a bug?
+
+If you think you've found a bug, first read the [Help I've Found a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions. If you're confident it's a new bug, and have confirmed that someone else facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
+
+### Found a security issue?
+
+Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+
+### Contributing
+
+#### [Please follow these steps to contribute.](CONTRIBUTING.md)
+
+### License
+
+Copyright © 2018 freeCodeCamp.org
+
+The content of this repository bound by the following licenses:
+
+- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) License.
+- The [curricular content](https://www.npmjs.com/package/@freecodecamp/curriculum) in the [`/curriculum`](/curriculum) folder and its subdirectories are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) License.
